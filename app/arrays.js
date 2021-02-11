@@ -2,19 +2,39 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.arraysAnswers = {
   indexOf: function(arr, item) {
-
+    var iterador = 0;
+    while (iterador < arr.length) {
+      if (item === arr[iterador]) {
+        return iterador;
+      }
+      iterador += 1;
+    }
+    return -1;
   },
 
   sum: function(arr) {
-
+    var iterador = 0;
+    var result = 0;
+    while (iterador < arr.length){
+      result += arr[iterador];
+      iterador += 1;
+    }
+    return result;
   },
 
   remove: function(arr, item) {
-
+    var iterador = 0;
+    var tempArr = [];
+    while (iterador < arr.length) {
+      if (item !== arr[iterador]) {
+        tempArr.push(arr[iterador]);
+      }
+      iterador += 1;
+    }
+    return tempArr;
   },
 
   removeWithoutCopy: function(arr, item) {
-
   },
 
   append: function(arr, item) {
